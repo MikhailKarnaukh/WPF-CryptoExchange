@@ -23,6 +23,8 @@ namespace CryptoExchange
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new CurrencyViewModel();
+            ((CurrencyViewModel)DataContext).LoadCurrencies();
         }
     }
 }
