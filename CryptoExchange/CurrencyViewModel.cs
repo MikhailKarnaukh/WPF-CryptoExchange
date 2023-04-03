@@ -34,7 +34,7 @@ namespace CryptoExchange
                 OnPropertyChanged("CurrencyToShow");
             }
         }
-        public async Task LoadCurrencies()
+        public async Task LoadCurrenciesAsync()
         {
             HttpClient client = new HttpClient();
             HttpResponseMessage response = await client.GetAsync("https://api.coingecko.com/api/v3/coins/list");
@@ -46,9 +46,9 @@ namespace CryptoExchange
                 {
                     Сurrencies.Add(currency);
                 }
-
             }
         }
+
 
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string property = "")

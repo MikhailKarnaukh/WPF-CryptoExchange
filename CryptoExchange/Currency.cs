@@ -38,8 +38,14 @@ namespace CryptoExchange
             set
             {
                 _name = value;
-                OnPropertyChanged("Id");
+                OnPropertyChanged("Name");
             }
+        }
+        public Currency(string name,string id, string symbol)
+        {
+            _id = id;
+            _symbol = symbol;
+            _name = name;
         }
 
 
