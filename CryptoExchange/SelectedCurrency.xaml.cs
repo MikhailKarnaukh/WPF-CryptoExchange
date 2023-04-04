@@ -35,7 +35,7 @@ namespace CryptoExchange
             CurrencyResult = currency;
             DataContext = this;
         }
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string property = "")
         {
             if (PropertyChanged != null)

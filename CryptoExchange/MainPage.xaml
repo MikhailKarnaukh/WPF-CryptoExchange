@@ -17,7 +17,7 @@
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="2">
                 <TextBox x:Name="SearchTextBox" TextChanged="OnSearchTextChanged"/>
-                <ListBox x:Name="MyListBox" SelectionChanged="OnSelectionChanged">
+                <ListBox x:Name="MyListBox" SelectionChanged="SelectFromListBox">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Name}" />
@@ -26,9 +26,17 @@
                 </ListBox>
             </StackPanel>
         </Grid>
-        <!--<Frame x:Name="MainFrame"/>-->
+        <Grid DockPanel.Dock="Left">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Button x:Name="button1" Grid.Row="0" Width="60" Height="30" Content="Нажать" Margin="0,35,0,78"  />
+            <Button x:Name="button0" Grid.Row="0" Width="60" Height="30" Content="Нажать" Margin="0,0,0,113" />
+        </Grid>
         <Grid>
-            <ListView ItemsSource="{Binding Сurrencies}" SelectedItem="{Binding CurrencyToShow}">
+            <ListView x:Name="MyListView" ItemsSource="{Binding Currencies}" SelectionChanged="SelectFromListView">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel>

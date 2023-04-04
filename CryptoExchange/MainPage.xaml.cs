@@ -25,34 +25,39 @@ namespace CryptoExchange
             InitializeComponent();
             DataContext = new CurrencyViewModel();
             ((CurrencyViewModel)DataContext).LoadCurrenciesAsync();
-           
         }
-
 
         private void OnSearchTextChanged(object sender, TextChangedEventArgs e)
         {
             string searchText = SearchTextBox.Text.ToLower();
             var viewModel = (CurrencyViewModel)DataContext;
-            if (viewModel != null && viewModel.Сurrencies != null)
+            if (viewModel != null && viewModel.Currencies != null)
             {
-                var filteredList = viewModel.Сurrencies.Where(x => x.Name.ToLower().Contains(searchText)).ToList();
+                var filteredList = viewModel.Currencies.Where(x => x.Name.ToLower().Contains(searchText)).ToList();
                 MyListBox.ItemsSource = filteredList;
             }
         }
-        //private void OnSearchTextBoxLostFocus(object sender, RoutedEventArgs e)  //<TextBox x:Name="SearchTextBox" TextChanged="OnSearchTextChanged" LostFocus="OnSearchTextBoxLostFocus"  />
-        //{
-        //    SearchTextBox.Text = "";
-        //    MyListBox.ItemsSource = null;
-        //}
 
-        private void OnSelectionChanged(object sender, RoutedEventArgs e)
+        private void SelectFromListBox(object sender, RoutedEventArgs e)
         {
             var selectedCurrency = (Currency)MyListBox.SelectedItem;
             if (selectedCurrency != null)
             {
                 var currencyPage = new SelectedCurrency(selectedCurrency);
-                //MainFrame.Navigate(currencyPage);
                 NavigationService.Navigate(currencyPage);
+               
+            }
+        }
+
+        private void SelectFromListView(object sender, RoutedEventArgs e)
+        {
+            var selectedCurrency = (Currency)MyListView.SelectedItem;
+            if (selectedCurrency != null)
+            {
+                MyListView.UnselectAll();
+                var currencyPage = new SelectedCurrency(selectedCurrency);
+                NavigationService.Navigate(currencyPage);
+
             }
         }
     }
