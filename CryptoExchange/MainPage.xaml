@@ -32,8 +32,8 @@
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-            <Button x:Name="button1" Grid.Row="0" Width="60" Height="30" Content="Нажать" Margin="0,35,0,78"  />
-            <Button x:Name="button0" Grid.Row="0" Width="60" Height="30" Content="Нажать" Margin="0,0,0,113" />
+            <Button x:Name="button0" Grid.Row="0" Width="60" Height="30" Content="Exchenger" Margin="0,0,0,113"  Click="MoveToExchanger"/>
+            <Button x:Name="button1" Grid.Row="0" Width="60" Height="30" Content="Нажать" Margin="0,35,0,78" />
         </Grid>
         <Grid>
             <ListView x:Name="MyListView" ItemsSource="{Binding Currencies}" SelectionChanged="SelectFromListView">

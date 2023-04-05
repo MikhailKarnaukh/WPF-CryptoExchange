@@ -60,5 +60,11 @@ namespace CryptoExchange
 
             }
         }
+
+        private void MoveToExchanger(object sender, RoutedEventArgs e)
+        {
+            var exchengerPage = new ExchangerPage();
+            NavigationService.Navigate(exchengerPage);
+        }
     }
 }
