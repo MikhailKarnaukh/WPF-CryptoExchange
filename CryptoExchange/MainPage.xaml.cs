@@ -65,6 +65,6 @@ namespace CryptoExchange
         {
             var exchengerPage = new ExchangerPage();
             NavigationService.Navigate(exchengerPage);
-        }
+        }        
     }
 }

@@ -14,8 +14,10 @@
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.Column="0" Text="{Binding CurrencyResult.Name}" />
-        <TextBlock Grid.Column="1" Text="{Binding CurrencyResult.Symbol}" />
-        <TextBlock Grid.Column="2" Text="{Binding CurrencyResult.Id}" />
+        <StackPanel Grid.Column="1" Orientation="Vertical">
+            <TextBlock Text="{Binding CurrencyResult.Name}" />
+            <TextBlock Text="{Binding CurrencyResult.Symbol}" />
+            <TextBlock Text="{Binding CurrencyResult.Id}" />
+        </StackPanel>
     </Grid>
 </Page>
